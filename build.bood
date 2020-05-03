@@ -1,0 +1,33 @@
+go_binary {
+  name: "server",
+  pkg: "github.com/KHYehor/design-lab3/cmd/server",
+  testPkg: "github.com/KHYehor/design-lab3/cmd/server",
+  outTestFile: "server.txt",
+  srcs: [
+    "httptools/**/*.go",
+    "signal/**/*.go",
+    "cmd/server/*.go"
+  ]
+}
+
+go_binary {
+    name: "client",
+    pkg: "github.com/KHYehor/design-lab3/cmd/client",
+      testPkg: "github.com/KHYehor/design-lab3/cmd/client",
+      outTestFile: "client.txt",
+      srcs: [
+        "cmd/client/*.go"
+      ]
+}
+
+go_binary {
+  name: "lb",
+  pkg: "github.com/KHYehor/design-lab3/cmd/lb",
+  testPkg: "github.com/KHYehor/design-lab3/cmd/lb",
+  outTestFile: "lb.txt",
+  srcs: [
+    "httptools/**/*.go",
+    "signal/**/*.go",
+    "cmd/lb/*.go"
+  ],
+}

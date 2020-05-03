@@ -1,0 +1,6 @@
+go_binary {
+  name: "integration",
+  testPkg: "github.com/KHYehor/design-lab3/integration",
+  outTestFile: "integration.txt",
+}
+

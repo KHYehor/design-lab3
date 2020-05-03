@@ -1,0 +1,12 @@
+FROM golang:1.14 as build
+
+RUN apt-get update && apt-get install -y ninja-build
+
+RUN go get -u github.com/KHYehor/design-lab2/build/cmd/bood
+
+WORKDIR /go/src/practice-3
+COPY . .
+
+# Here I replace my bood's build's, because I really don't know (maybe yet) how do it another way
+RUN mv build.bood build/product/ && mv build/test/build.bood . && CGO_ENABLED=0
+ENTRYPOINT ["bood"]
